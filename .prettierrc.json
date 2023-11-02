@@ -1,0 +1,9 @@
+{
+  "useTabs": true,
+  "singleQuote": true,
+  "semi": false,
+  "printWidth": 120,
+  "tabWidth": 2,
+  "endOfLine": "crlf",
+  "tailwindConfig": "./tailwind.config.js"
+}
