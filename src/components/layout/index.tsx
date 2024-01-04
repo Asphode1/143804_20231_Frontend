@@ -4,14 +4,22 @@ import Sidebar from './sidebar'
 import { useEffect } from 'react'
 import Cookies from 'js-cookie'
 import { Toaster } from 'react-hot-toast'
+import useHouse from '../../hooks/useHouse'
+import axios from '../../shared/axios'
 
 export default function Layout() {
 	const navigate = useNavigate()
+	const { setHouse } = useHouse()
 	useEffect(() => {
 		if (Cookies.get('user') === undefined || Cookies.get('user') === '') {
 			navigate('/login')
+		} else {
+			axios
+				.get('/api/house/get')
+				.then((res) => res.data)
+				.then((res) => setHouse(res[0]))
 		}
-	})
+	}, []) // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<main className="h-screen bg-gray-100">
