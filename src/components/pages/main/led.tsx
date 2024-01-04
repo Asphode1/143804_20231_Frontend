@@ -7,7 +7,7 @@ export default function LED({ leds }: { leds: Device[] }) {
 			<div className="flex items-center">
 				<h1 className="font-bold text-4xl mb-4">LED</h1>
 			</div>
-			<div className="max-h-[60vh] overflow-y-auto scrollbar-hide">
+			<div>
 				{leds.map((led) => (
 					<SingleLED key={led.id} device={led} />
 				))}
