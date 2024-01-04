@@ -7,7 +7,7 @@ export default function Fire({ fires }: { fires: Device[] }) {
 			<div className="flex items-center">
 				<h1 className="font-bold text-4xl mb-4">Fire Detector</h1>
 			</div>
-			<div className="max-h-[60vh] overflow-y-auto scrollbar-hide">
+			<div>
 				{fires.map((fire) => (
 					<SingleFire key={fire.id} device={fire} />
 				))}

@@ -7,7 +7,7 @@ export default function Metrics({ devices }: { devices: Device[] }) {
 			<div className="flex items-center">
 				<h1 className="font-bold text-4xl mb-4">Sensor</h1>
 			</div>
-			<div className="max-h-[60vh] overflow-y-auto scrollbar-hide">
+			<div>
 				{devices.map((device) => (
 					<SingleMetrics key={device.id} device={device} />
 				))}
