@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	base: '/IoT/',
+	base: '/143804_20231_Frontend/',
 	server: {
 		proxy: {
 			'/api': {
