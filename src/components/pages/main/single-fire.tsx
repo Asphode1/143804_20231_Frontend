@@ -32,6 +32,7 @@ export default function SingleFire({ device }: { device: Device }) {
 				method: 'GET',
 				headers: {
 					Accept: 'text/event-stream',
+					'ngrok-skip-browser-warning': 'ngrok-skip-browser-warning',
 				},
 				async onopen(res) {
 					if (res.ok && res.status === 200) {
