@@ -8,16 +8,22 @@ export default function ConfirmDelete({
 	device,
 	open,
 	setOpen,
+	forceReload,
 }: {
 	device: Device | House | undefined
 	open: boolean
 	setOpen: Dispatch<SetStateAction<boolean>>
+	forceReload: Dispatch<SetStateAction<boolean>>
 }) {
 	const deleteDevice = async (e: MouseEvent) => {
 		if (!device) return
 		e.preventDefault()
 		const path = 'type' in device ? 'devices' : 'house'
-		const promise = () => axios.delete(`/api/${path}/delete/${device.id}`).finally(() => setOpen(false))
+		const promise = () =>
+			axios.delete(`/api/${path}/delete/${device.id}`).finally(() => {
+				setOpen(false)
+				forceReload((prev) => !prev)
+			})
 		toast.promise(
 			promise(),
 			{ loading: 'Deleting...', success: 'Deleted successfully', error: 'Delete failed' },

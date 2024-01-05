@@ -71,7 +71,7 @@ export default function DeviceTable({
 					</button>
 				</div>
 			</div>
-			<ConfirmDelete device={device} open={openDelete} setOpen={setOpenDelete} />
+			<ConfirmDelete forceReload={forceReload} device={device} open={openDelete} setOpen={setOpenDelete} />
 		</div>
 	)
 }

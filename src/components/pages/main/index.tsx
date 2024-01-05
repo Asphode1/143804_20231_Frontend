@@ -5,17 +5,19 @@ import { DeviceType } from '../../../types/enums'
 import LED from './led'
 import Fire from './fire'
 import useHouse from '../../../hooks/useHouse'
+import { useLocation } from 'react-router-dom'
 
 export default function Main() {
 	const [devices, setDevices] = useState<Device[]>([])
 
 	const { house } = useHouse()
+	const location = useLocation()
 
 	useEffect(() => {
-		if (house) {
+		if (house && location.pathname === '/') {
 			setDevices(house.devices)
 		}
-	}, [house])
+	}, [house, location])
 	return (
 		<>
 			<Metrics devices={devices.filter((device) => device.type === DeviceType.SENSOR)} />
