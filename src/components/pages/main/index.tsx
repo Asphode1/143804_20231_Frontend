@@ -14,7 +14,7 @@ export default function Main() {
 	const location = useLocation()
 
 	useEffect(() => {
-		if (house && location.pathname === '/') {
+		if (house) {
 			setDevices(house.devices)
 		}
 	}, [house, location])
