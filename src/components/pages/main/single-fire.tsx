@@ -76,7 +76,7 @@ export default function SingleFire({ device }: { device: Device }) {
 		return () => controller.abort()
 	}, [device]) // eslint-disable-line react-hooks/exhaustive-deps
 	return (
-		<div className="bg-gray-200 p-4 rounded-lg">
+		<div className="bg-gray-200 p-4 rounded-lg mb-4">
 			<div className="flex">
 				<div>
 					<h3 className="text-xl">Device: {device.name}</h3>

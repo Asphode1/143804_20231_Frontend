@@ -54,7 +54,7 @@ export default function SingleMetrics({ device }: { device: Device }) {
 	}, [temp, humi])
 
 	return (
-		<div className="bg-gray-200 p-4 rounded-lg">
+		<div className="bg-gray-200 p-4 rounded-lg mb-4">
 			<div className="flex mb-4">
 				<div>
 					<h3 className="text-xl">Device: {device.name}</h3>

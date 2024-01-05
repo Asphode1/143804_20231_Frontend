@@ -89,7 +89,7 @@ export default function SingleLED({ device }: { device: Device }) {
 		if (user && user.length) fetchData()
 	}, [device]) // eslint-disable-line react-hooks/exhaustive-deps
 	return (
-		<div className="bg-gray-200 p-4 rounded-lg">
+		<div className="bg-gray-200 p-4 rounded-lg mb-4">
 			<div className="flex mb-4">
 				<div>
 					<h3 className="text-xl">Device: {device.name}</h3>
