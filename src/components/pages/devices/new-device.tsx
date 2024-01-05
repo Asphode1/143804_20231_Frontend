@@ -25,7 +25,7 @@ export default function NewDevice({
 
 	const addDevice = async (e: MouseEvent) => {
 		e.preventDefault()
-		if (!name.length || !string.length) {
+		if (!name.length || !string.length || !id.length) {
 			setErr('Please fill all the fields')
 			return
 		}
@@ -88,7 +88,9 @@ export default function NewDevice({
 							/>
 						</div>
 						<div className="mt-4">
-							<p className="mb-2">ID (leave blank for auto id)</p>
+							<p className="mb-2">
+								ID (device topics) <span className="text-red-500">*</span>
+							</p>
 							<input
 								className="block w-full rounded-md border outline-none border-black bg-inherit p-2 text-base"
 								type="text"
