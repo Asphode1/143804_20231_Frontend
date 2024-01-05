@@ -47,7 +47,7 @@ export default function SingleFire({ device }: { device: Device }) {
 					if (data === '0' && !warn) {
 						setWarn(true)
 						toast.custom(
-							<div onClick={onClick} className="p-4 rounded-lg bg-gray-50">
+							<div onClick={onClick} className="p-4 text-xl rounded-lg bg-yellow-400">
 								<div>
 									<p className="text-center">
 										<span>Warning!&nbsp;</span>
